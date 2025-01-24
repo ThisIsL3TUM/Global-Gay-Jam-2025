@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bmwtqy4h57dmq"]
+[gd_scene load_steps=7 format=3 uid="uid://bmwtqy4h57dmq"]
 
 [ext_resource type="Texture2D" uid="uid://cw0feuepqvfm" path="res://icon.svg" id="1_3rkj3"]
 [ext_resource type="Script" path="res://scripts/claw.gd" id="2_4ito3"]
@@ -8,6 +8,11 @@ size = Vector2(130, 132)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m2ujs"]
 size = Vector2(136, 138)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dvsgr"]
+size = Vector2(286, 30)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_v7fxd"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -31,11 +36,36 @@ scale = Vector2(0.4, 0.4)
 script = ExtResource("2_4ito3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, 3)
+position = Vector2(0, -80)
 shape = SubResource("RectangleShape2D_m2ujs")
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+position = Vector2(0, -77.5)
 texture = ExtResource("1_3rkj3")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.5, 0.5)
+
+[node name="Rail Prototype" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rail Prototype"]
+position = Vector2(0, -76)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_dvsgr")
+
+[node name="Sprite2D" type="Sprite2D" parent="Rail Prototype"]
+position = Vector2(-143, -87)
+scale = Vector2(286, 22)
+texture = SubResource("PlaceholderTexture2D_v7fxd")
+
+[node name="Rail Prototype2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rail Prototype2"]
+position = Vector2(0, 72)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_dvsgr")
+
+[node name="Sprite2D" type="Sprite2D" parent="Rail Prototype2"]
+position = Vector2(-143, 57)
+scale = Vector2(286, 31)
+texture = SubResource("PlaceholderTexture2D_v7fxd")
