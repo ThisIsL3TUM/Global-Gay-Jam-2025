@@ -1,72 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://cshv3pv637r8o"]
+[gd_scene load_steps=4 format=3 uid="uid://c2l1thn6f706x"]
 
-[ext_resource type="Texture2D" uid="uid://cw0feuepqvfm" path="res://icon.svg" id="1_eedjh"]
-[ext_resource type="Script" path="res://scripts/claw.gd" id="2_he3e6"]
+[ext_resource type="PackedScene" uid="uid://6stpvaosdagt" path="res://temp moving/claw.tscn" id="1_gyjje"]
 [ext_resource type="Texture2D" uid="uid://pbpqyq6ancjy" path="res://sprite_test-game_jam.png" id="2_vsmxe"]
-[ext_resource type="Script" path="res://scripts/grabber.gd" id="3_4sjxh"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_m2ujs"]
-size = Vector2(136, 138)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_uvniq"]
-size = Vector2(51.2653, 47.7297)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hcode"]
-size = Vector2(118.876, 118.119)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_pv3uw"]
-radius = 122.556
+[ext_resource type="PackedScene" uid="uid://dxcx7jkqge7m3" path="res://temp moving/bubble_1_sprite.tscn" id="3_fc5jx"]
 
 [node name="Node2D" type="Node2D"]
 
-[node name="claw" type="Area2D" parent="."]
-position = Vector2(6, -76)
-rotation = 0.785398
-scale = Vector2(0.4, 0.4)
-script = ExtResource("2_he3e6")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="claw"]
-position = Vector2(0, 2.5)
-scale = Vector2(0.5, 0.5)
-shape = SubResource("RectangleShape2D_m2ujs")
-
-[node name="Sprite2D" type="Sprite2D" parent="claw"]
-position = Vector2(0, 2.5)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_eedjh")
-
-[node name="left_arm_1" type="Sprite2D" parent="claw"]
-position = Vector2(-31.8198, 102.53)
-scale = Vector2(0.0487895, 1)
-texture = ExtResource("1_eedjh")
-
-[node name="left_arm_2" type="Sprite2D" parent="claw/left_arm_1"]
-position = Vector2(1746.63, 53.5596)
-rotation = 0.569118
-scale = Vector2(0.090275, 25.649)
-skew = 0.997957
-texture = ExtResource("1_eedjh")
-
-[node name="right_arm_1" type="Sprite2D" parent="claw"]
-position = Vector2(94.0885, -33.5876)
-scale = Vector2(0.895716, 0.0386284)
-texture = ExtResource("1_eedjh")
-
-[node name="right_arm_2" type="Sprite2D" parent="claw"]
-position = Vector2(144.957, 56.5685)
-scale = Vector2(0.0679584, 1.41388)
-texture = ExtResource("1_eedjh")
-
-[node name="socket" type="Node2D" parent="claw"]
-position = Vector2(58.3363, 61.8718)
-
-[node name="socket_area" type="Area2D" parent="claw/socket"]
-position = Vector2(3.53553, 3.53554)
-script = ExtResource("3_4sjxh")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="claw/socket/socket_area"]
-position = Vector2(-13.2583, -11.4905)
-shape = SubResource("RectangleShape2D_uvniq")
+[node name="claw" parent="." instance=ExtResource("1_gyjje")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.5, 0.5)
@@ -76,24 +16,4 @@ position = Vector2(-42, 2)
 scale = Vector2(2, 2)
 texture = ExtResource("2_vsmxe")
 
-[node name="bubble_1_sprite" type="Sprite2D" parent="."]
-position = Vector2(22, 50)
-rotation = 0.785398
-scale = Vector2(0.249827, 0.245442)
-texture = ExtResource("1_eedjh")
-
-[node name="bubble_1" type="RigidBody2D" parent="bubble_1_sprite"]
-gravity_scale = 0.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="bubble_1_sprite/bubble_1"]
-position = Vector2(0, -1.44049)
-shape = SubResource("RectangleShape2D_hcode")
-
-[node name="grabable_area" type="Area2D" parent="bubble_1_sprite/bubble_1"]
-position = Vector2(2.83039, 2.88095)
-scale = Vector2(0.44209, -0.379891)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="bubble_1_sprite/bubble_1/grabable_area"]
-shape = SubResource("CircleShape2D_pv3uw")
-
-[connection signal="area_entered" from="bubble_1_sprite/bubble_1/grabable_area" to="claw/socket/socket_area" method="_on_grabable_area_area_entered"]
+[node name="bubble_1_sprite" parent="." instance=ExtResource("3_fc5jx")]
