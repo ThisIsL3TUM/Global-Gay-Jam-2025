@@ -1,8 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://gi4vhhaxxkpf"]
+[gd_scene load_steps=6 format=3 uid="uid://cj0f32rsgygfe"]
 
-[ext_resource type="PackedScene" uid="uid://dxcx7jkqge7m3" path="res://temp moving/bubble_1_sprite.tscn" id="1_n0whh"]
-[ext_resource type="Texture2D" uid="uid://ewdlvwkjh8xm" path="res://Background_3.png" id="1_nr7d1"]
-[ext_resource type="PackedScene" uid="uid://6stpvaosdagt" path="res://temp moving/claw.tscn" id="2_et1mu"]
+[ext_resource type="Texture2D" uid="uid://ewdlvwkjh8xm" path="res://Background_3.png" id="1_nhr42"]
+[ext_resource type="PackedScene" uid="uid://dxcx7jkqge7m3" path="res://temp moving/bubble_1_sprite.tscn" id="2_3dugg"]
+[ext_resource type="PackedScene" uid="uid://6stpvaosdagt" path="res://temp moving/claw.tscn" id="3_haliu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dvsgr"]
 size = Vector2(286, 30)
@@ -14,7 +14,7 @@ size = Vector2(286, 30)
 [node name="Background3" type="Sprite2D" parent="."]
 position = Vector2(9.53674e-07, 61)
 scale = Vector2(1.1, 1.1)
-texture = ExtResource("1_nr7d1")
+texture = ExtResource("1_nhr42")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.5, 0.5)
@@ -121,23 +121,14 @@ scale = Vector2(2, 1.4)
 color = Color(0, 0, 0, 1)
 polygon = PackedVector2Array(138, 80, 141, 75, 141, 80)
 
-[node name="bubble_1_sprite" parent="." instance=ExtResource("1_n0whh")]
+[node name="bubble_1_sprite" parent="." instance=ExtResource("2_3dugg")]
 position = Vector2(111, 5)
 
 [node name="CollisionShape2D" parent="bubble_1_sprite/bubble_1" index="0"]
 position = Vector2(8.49115, -1.44049)
 
-[node name="grabable_area" parent="bubble_1_sprite/bubble_1" index="1"]
-position = Vector2(56.5685, 57.723)
-
-[node name="CollisionShape2D" parent="bubble_1_sprite/bubble_1/grabable_area" index="0"]
-position = Vector2(-106.631, 101.298)
-
-[node name="claw" parent="." instance=ExtResource("2_et1mu")]
+[node name="claw" parent="." instance=ExtResource("3_haliu")]
 position = Vector2(1.07288e-06, -47)
-
-[node name="CollisionShape2D" parent="claw/socket/socket_area" index="0"]
-position = Vector2(-49.4975, -42.4264)
 
 [connection signal="area_entered" from="bubble_1_sprite/bubble_1/grabable_area" to="claw/socket/socket_area" method="_on_grabable_area_area_entered"]
 
