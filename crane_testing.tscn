@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://fyviopfmkg8"]
+[gd_scene load_steps=6 format=3 uid="uid://gi4vhhaxxkpf"]
 
 [ext_resource type="PackedScene" uid="uid://dxcx7jkqge7m3" path="res://temp moving/bubble_1_sprite.tscn" id="1_n0whh"]
+[ext_resource type="Texture2D" uid="uid://ewdlvwkjh8xm" path="res://Background_3.png" id="1_nr7d1"]
 [ext_resource type="PackedScene" uid="uid://6stpvaosdagt" path="res://temp moving/claw.tscn" id="2_et1mu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dvsgr"]
@@ -9,6 +10,11 @@ size = Vector2(286, 30)
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_v7fxd"]
 
 [node name="Node2D2" type="Node2D"]
+
+[node name="Background3" type="Sprite2D" parent="."]
+position = Vector2(9.53674e-07, 61)
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("1_nr7d1")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.5, 0.5)

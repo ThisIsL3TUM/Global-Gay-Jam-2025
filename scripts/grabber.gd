@@ -5,16 +5,16 @@ var bubble_1
 var attached = false
 var object_on_claw
 var claw
-@export var claw_down_distance = 100
-@export var claw_speed = 20
+@export var claw_down_distance = 40
+@export var claw_speed = 10
 var destination = Vector2.ZERO
 var moves_to_make = 0
 var claw_timer_running = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	bubble_1 = get_node("/root/Node2D/bubble_1_sprite")
-	claw = get_node("/root/Node2D/claw")
+	bubble_1 = get_node("/root/Node2D2/bubble_1_sprite")
+	claw = get_node("/root/Node2D2/claw")
 
 
 	if Input.is_action_just_pressed("grab"):
