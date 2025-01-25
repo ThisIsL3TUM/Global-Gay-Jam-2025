@@ -1,0 +1,54 @@
+[gd_scene load_steps=8 format=3 uid="uid://bq1vekksxp1ut"]
+
+[ext_resource type="Script" path="res://button_move.gd" id="1_5iy70"]
+[ext_resource type="Texture2D" uid="uid://dm3p55w3f2wuk" path="res://BUTTON.png" id="1_mfk57"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qfway"]
+atlas = ExtResource("1_mfk57")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gcgwo"]
+atlas = ExtResource("1_mfk57")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_swdwn"]
+atlas = ExtResource("1_mfk57")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tt0ij"]
+atlas = ExtResource("1_mfk57")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iuxfu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qfway")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gcgwo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_swdwn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tt0ij")
+}],
+"loop": false,
+"name": &"Press",
+"speed": 5.0
+}]
+
+[node name="ButtonMoveLeft" type="Node2D"]
+script = ExtResource("1_5iy70")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 181.0
+offset_top = 154.0
+offset_right = 221.0
+offset_bottom = 194.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_iuxfu")
+animation = &"Press"
