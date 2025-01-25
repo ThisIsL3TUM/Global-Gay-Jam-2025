@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://fyviopfmkg8"]
+[gd_scene load_steps=10 format=3 uid="uid://fyviopfmkg8"]
 
 [ext_resource type="PackedScene" uid="uid://dxcx7jkqge7m3" path="res://temp moving/bubble_1_sprite.tscn" id="1_n0whh"]
 [ext_resource type="Texture2D" uid="uid://ewdlvwkjh8xm" path="res://Background_3.png" id="1_nr7d1"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://flvf7hl30cry" path="res://BowlPrototype4.png" id="2_odymy"]
 [ext_resource type="Texture2D" uid="uid://y3m54igoitdl" path="res://Bumps.png" id="3_0tnam"]
 [ext_resource type="PackedScene" uid="uid://bq1vekksxp1ut" path="res://button_move.tscn" id="4_eduw7"]
+[ext_resource type="PackedScene" uid="uid://duwnw7dgob6dn" path="res://button_move_right.tscn" id="5_7egkp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dvsgr"]
 size = Vector2(286, 30)
@@ -100,11 +101,11 @@ texture = ExtResource("3_0tnam")
 position = Vector2(27, 0)
 texture = ExtResource("3_0tnam")
 
-[node name="ButtonMove" parent="." instance=ExtResource("4_eduw7")]
-position = Vector2(12, 67)
-
-[node name="ButtonMove2" parent="." instance=ExtResource("4_eduw7")]
+[node name="ButtonMoveLeft" parent="." instance=ExtResource("4_eduw7")]
 position = Vector2(-11, 67)
+
+[node name="ButtonMoveRight" parent="." instance=ExtResource("5_7egkp")]
+position = Vector2(11, 67)
 
 [node name="Frame" type="StaticBody2D" parent="."]
 

@@ -7,10 +7,6 @@
 atlas = ExtResource("1_mfk57")
 region = Rect2(0, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_tt0ij"]
-atlas = ExtResource("1_mfk57")
-region = Rect2(16, 0, 16, 16)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_gcgwo"]
 atlas = ExtResource("1_mfk57")
 region = Rect2(32, 0, 16, 16)
@@ -19,6 +15,10 @@ region = Rect2(32, 0, 16, 16)
 atlas = ExtResource("1_mfk57")
 region = Rect2(48, 0, 16, 16)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_tt0ij"]
+atlas = ExtResource("1_mfk57")
+region = Rect2(16, 0, 16, 16)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_iuxfu"]
 animations = [{
 "frames": [{
@@ -26,20 +26,20 @@ animations = [{
 "texture": SubResource("AtlasTexture_qfway")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_tt0ij")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_gcgwo")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_swdwn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tt0ij")
 }],
-"loop": true,
+"loop": false,
 "name": &"Press",
 "speed": 5.0
 }]
 
-[node name="ButtonMove" type="Node2D"]
+[node name="ButtonMoveLeft" type="Node2D"]
 script = ExtResource("1_5iy70")
 
 [node name="TextureRect" type="TextureRect" parent="."]
