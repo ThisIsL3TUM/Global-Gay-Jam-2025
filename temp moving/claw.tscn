@@ -1,0 +1,60 @@
+[gd_scene load_steps=6 format=3 uid="uid://6stpvaosdagt"]
+
+[ext_resource type="Script" path="res://scripts/claw.gd" id="1_825lh"]
+[ext_resource type="Texture2D" uid="uid://cw0feuepqvfm" path="res://icon.svg" id="2_o3jhh"]
+[ext_resource type="Script" path="res://scripts/grabber.gd" id="3_lp4cq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m2ujs"]
+size = Vector2(136, 138)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uvniq"]
+size = Vector2(123.744, 118.44)
+
+[node name="claw" type="Area2D"]
+position = Vector2(6, -76)
+rotation = 0.785398
+scale = Vector2(0.4, 0.4)
+script = ExtResource("1_825lh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2.5)
+scale = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_m2ujs")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 2.5)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_o3jhh")
+
+[node name="left_arm_1" type="Sprite2D" parent="."]
+position = Vector2(-31.8198, 102.53)
+scale = Vector2(0.0487895, 1)
+texture = ExtResource("2_o3jhh")
+
+[node name="left_arm_2" type="Sprite2D" parent="left_arm_1"]
+position = Vector2(1746.63, 53.5596)
+rotation = 0.569118
+scale = Vector2(0.090275, 25.649)
+skew = 0.997957
+texture = ExtResource("2_o3jhh")
+
+[node name="right_arm_1" type="Sprite2D" parent="."]
+position = Vector2(94.0885, -33.5876)
+scale = Vector2(0.895716, 0.0386284)
+texture = ExtResource("2_o3jhh")
+
+[node name="right_arm_2" type="Sprite2D" parent="."]
+position = Vector2(144.957, 56.5685)
+scale = Vector2(0.0679584, 1.41388)
+texture = ExtResource("2_o3jhh")
+
+[node name="socket" type="Node2D" parent="."]
+position = Vector2(58.3363, 61.8718)
+
+[node name="socket_area" type="Area2D" parent="socket"]
+position = Vector2(3.53553, 3.53554)
+script = ExtResource("3_lp4cq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="socket/socket_area"]
+position = Vector2(3.53553, 13.2583)
+shape = SubResource("RectangleShape2D_uvniq")

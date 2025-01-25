@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bmwtqy4h57dmq"]
+[gd_scene load_steps=5 format=3 uid="uid://h4meqt5x700e"]
 
-[ext_resource type="PackedScene" uid="uid://6stpvaosdagt" path="res://temp moving/claw.tscn" id="1_t7nvv"]
-[ext_resource type="PackedScene" uid="uid://dxcx7jkqge7m3" path="res://temp moving/bubble_1_sprite.tscn" id="2_xxymb"]
+[ext_resource type="PackedScene" uid="uid://dxcx7jkqge7m3" path="res://temp moving/bubble_1_sprite.tscn" id="1_n0whh"]
+[ext_resource type="PackedScene" uid="uid://6stpvaosdagt" path="res://temp moving/claw.tscn" id="2_et1mu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dvsgr"]
 size = Vector2(286, 30)
@@ -88,8 +88,16 @@ scale = Vector2(2, 1.4)
 color = Color(0.231373, 0.239216, 1, 1)
 polygon = PackedVector2Array(138, 80, 141, 75, 141, 80)
 
-[node name="bubble_1_sprite" parent="." instance=ExtResource("2_xxymb")]
-position = Vector2(-1, 20)
+[node name="bubble_1_sprite" parent="." instance=ExtResource("1_n0whh")]
+position = Vector2(111, 5)
 
-[node name="claw" parent="." instance=ExtResource("1_t7nvv")]
+[node name="CollisionShape2D" parent="bubble_1_sprite/bubble_1" index="0"]
+position = Vector2(8.49115, -1.44049)
+
+[node name="claw" parent="." instance=ExtResource("2_et1mu")]
 position = Vector2(1.07288e-06, -47)
+
+[connection signal="area_entered" from="bubble_1_sprite/bubble_1/grabable_area" to="claw/socket/socket_area" method="_on_grabable_area_area_entered"]
+
+[editable path="bubble_1_sprite"]
+[editable path="claw"]
