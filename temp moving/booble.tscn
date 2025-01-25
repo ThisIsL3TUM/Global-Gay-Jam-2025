@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bhhnf5vqlepiv"]
+
+[ext_resource type="Script" path="res://scripts/booble.gd" id="1_y4bo7"]
+[ext_resource type="Texture2D" uid="uid://b0grr0qoxyk4b" path="res://Boobel.png" id="2_5uejc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w0a5g"]
+size = Vector2(119.758, 281.452)
+
+[node name="booble" type="Area2D"]
+position = Vector2(111, 5)
+rotation = 0.785398
+scale = Vector2(0.15, 0.147)
+script = ExtResource("1_y4bo7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2.35663, -2.40515)
+scale = Vector2(1.22025, 0.495635)
+shape = SubResource("RectangleShape2D_w0a5g")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(10, 10)
+texture = ExtResource("2_5uejc")
