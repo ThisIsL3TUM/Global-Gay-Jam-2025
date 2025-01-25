@@ -6,12 +6,12 @@
 size = Vector2(45.2862, 37.4524)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pv3uw"]
-radius = 122.556
+radius = 58.0735
 
 [node name="bubble_1_sprite" type="Sprite2D"]
 position = Vector2(22, 50)
 rotation = 0.785398
-scale = Vector2(0.249827, 0.245442)
+scale = Vector2(0.15, 0.147)
 texture = ExtResource("1_fj1fe")
 
 [node name="bubble_1" type="RigidBody2D" parent="."]
