@@ -9,7 +9,7 @@ size = Vector2(286, 30)
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_v7fxd"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D3" type="Node2D"]
 
 [node name="Background3" type="Sprite2D" parent="."]
 position = Vector2(1, 60)
