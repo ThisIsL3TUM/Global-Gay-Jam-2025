@@ -15,7 +15,7 @@ var claw_timer_running = false
 func _ready() -> void:
 	bubble_1 = get_node("/root/Node2D/bubble_1_sprite")
 	claw = get_node("/root/Node2D/claw")
-	print(bubble_1)
+	
 
 
 
@@ -41,6 +41,7 @@ func _process(delta: float) -> void:
 		
 	if attached == true:
 		object_on_claw.global_position = self.global_position
+
 
 
 
