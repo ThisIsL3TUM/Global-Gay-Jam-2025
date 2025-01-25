@@ -52,11 +52,13 @@ polygon = PackedVector2Array(-84, 57, -84, 28, -56, 57)
 polygon = PackedVector2Array(85, 57, 85, 28, 56, 57)
 
 [node name="UIButtonSurface1" type="Polygon2D" parent="."]
+scale = Vector2(1.04762, 1)
 color = Color(0.61339, 0.61339, 0.61339, 1)
 polygon = PackedVector2Array(0, 79, 0, 57, -21, 57, -21, 79)
 
 [node name="UIButtonSurface2" type="Polygon2D" parent="."]
-position = Vector2(21, 0)
+position = Vector2(22, 0)
+scale = Vector2(1.04762, 1)
 color = Color(0.61339, 0.61339, 0.61339, 1)
 polygon = PackedVector2Array(0, 79, 0, 57, -21, 57, -21, 79)
 
