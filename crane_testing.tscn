@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://gi4vhhaxxkpf"]
+[gd_scene load_steps=7 format=3 uid="uid://fyviopfmkg8"]
 
 [ext_resource type="PackedScene" uid="uid://dxcx7jkqge7m3" path="res://temp moving/bubble_1_sprite.tscn" id="1_n0whh"]
 [ext_resource type="Texture2D" uid="uid://ewdlvwkjh8xm" path="res://Background_3.png" id="1_nr7d1"]
 [ext_resource type="PackedScene" uid="uid://6stpvaosdagt" path="res://temp moving/claw.tscn" id="2_et1mu"]
+[ext_resource type="PackedScene" uid="uid://b4il3g33vllj0" path="res://button_move.tscn" id="4_eduw7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dvsgr"]
 size = Vector2(286, 30)
@@ -67,6 +68,12 @@ position = Vector2(22, 0)
 scale = Vector2(1.04762, 1)
 color = Color(0.61339, 0.61339, 0.61339, 1)
 polygon = PackedVector2Array(0, 79, 0, 57, -21, 57, -21, 79)
+
+[node name="ButtonMove" parent="." instance=ExtResource("4_eduw7")]
+position = Vector2(12, 67)
+
+[node name="ButtonMove2" parent="." instance=ExtResource("4_eduw7")]
+position = Vector2(-11, 67)
 
 [node name="Frame" type="StaticBody2D" parent="."]
 
