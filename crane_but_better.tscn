@@ -1,14 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://gi4vhhaxxkpf"]
+[gd_scene load_steps=6 format=3 uid="uid://bjetnefu8jon1"]
 
-[ext_resource type="PackedScene" uid="uid://dxcx7jkqge7m3" path="res://temp moving/bubble_1_sprite.tscn" id="1_n0whh"]
-[ext_resource type="PackedScene" uid="uid://6stpvaosdagt" path="res://temp moving/claw.tscn" id="2_et1mu"]
+[ext_resource type="PackedScene" uid="uid://dxcx7jkqge7m3" path="res://temp moving/bubble_1_sprite.tscn" id="1_57gr7"]
+[ext_resource type="PackedScene" uid="uid://6stpvaosdagt" path="res://temp moving/claw.tscn" id="2_n0oyh"]
+[ext_resource type="Texture2D" uid="uid://ewdlvwkjh8xm" path="res://Background_3.png" id="3_torgm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dvsgr"]
 size = Vector2(286, 30)
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_v7fxd"]
 
-[node name="Node2D2" type="Node2D"]
+[node name="Node2D" type="Node2D"]
+
+[node name="Background3" type="Sprite2D" parent="."]
+position = Vector2(1, 60)
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("3_torgm")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.5, 0.5)
@@ -88,14 +94,14 @@ scale = Vector2(2, 1.4)
 color = Color(0.231373, 0.239216, 1, 1)
 polygon = PackedVector2Array(138, 80, 141, 75, 141, 80)
 
-[node name="bubble_1_sprite" parent="." instance=ExtResource("1_n0whh")]
+[node name="bubble_1_sprite" parent="." instance=ExtResource("1_57gr7")]
 position = Vector2(111, 5)
 
-[node name="CollisionShape2D" parent="bubble_1_sprite/bubble_1" index="0"]
-position = Vector2(8.49115, -1.44049)
-
-[node name="claw" parent="." instance=ExtResource("2_et1mu")]
+[node name="claw" parent="." instance=ExtResource("2_n0oyh")]
 position = Vector2(1.07288e-06, -47)
+
+[node name="socket_area" parent="claw/socket" index="0"]
+position = Vector2(8.83885, 1.76776)
 
 [connection signal="area_entered" from="bubble_1_sprite/bubble_1/grabable_area" to="claw/socket/socket_area" method="_on_grabable_area_area_entered"]
 

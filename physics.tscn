@@ -1,10 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://cshv3pv637r8o"]
+[gd_scene load_steps=4 format=3 uid="uid://c2l1thn6f706x"]
 
 [ext_resource type="PackedScene" uid="uid://6stpvaosdagt" path="res://temp moving/claw.tscn" id="1_gyjje"]
 [ext_resource type="Texture2D" uid="uid://pbpqyq6ancjy" path="res://sprite_test-game_jam.png" id="2_vsmxe"]
 [ext_resource type="PackedScene" uid="uid://dxcx7jkqge7m3" path="res://temp moving/bubble_1_sprite.tscn" id="3_fc5jx"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 
 [node name="claw" parent="." instance=ExtResource("1_gyjje")]
 
