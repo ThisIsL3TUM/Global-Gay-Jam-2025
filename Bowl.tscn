@@ -1,0 +1,107 @@
+[gd_scene load_steps=3 format=3 uid="uid://dgslftfr4bq0r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oc7t3"]
+size = Vector2(41.6573, 1.7718)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_ymm6h"]
+
+[node name="Bowl" type="Node2D"]
+
+[node name="Border" type="StaticBody2D" parent="."]
+position = Vector2(-10, 14)
+rotation = 1.5708
+scale = Vector2(0.25, 1.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Border"]
+position = Vector2(-3, 0.741026)
+scale = Vector2(1, 1.5)
+shape = SubResource("RectangleShape2D_oc7t3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Border"]
+position = Vector2(-24.5164, 0)
+scale = Vector2(45.4864, 1.67358)
+texture = SubResource("CanvasTexture_ymm6h")
+
+[node name="Border3" type="StaticBody2D" parent="."]
+position = Vector2(-20, 6)
+rotation = 1.5708
+scale = Vector2(0.25, 1.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Border3"]
+position = Vector2(-3, 0.741026)
+scale = Vector2(1, 1.5)
+shape = SubResource("RectangleShape2D_oc7t3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Border3"]
+position = Vector2(-24.5164, 0)
+scale = Vector2(45.4864, 1.67358)
+texture = SubResource("CanvasTexture_ymm6h")
+
+[node name="Border2" type="StaticBody2D" parent="."]
+position = Vector2(11, 13)
+rotation = 1.5708
+scale = Vector2(0.25, 1.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Border2"]
+position = Vector2(0.102882, 0.00448608)
+scale = Vector2(1, 1.5)
+shape = SubResource("RectangleShape2D_oc7t3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Border2"]
+position = Vector2(-21.03, -0.813162)
+scale = Vector2(44.0631, 2.31316)
+texture = SubResource("CanvasTexture_ymm6h")
+
+[node name="Border4" type="StaticBody2D" parent="."]
+position = Vector2(21, 5)
+rotation = 1.5708
+scale = Vector2(0.25, 1.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Border4"]
+position = Vector2(0.102882, 0.00448608)
+scale = Vector2(1, 1.5)
+shape = SubResource("RectangleShape2D_oc7t3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Border4"]
+position = Vector2(-21.03, -0.813162)
+scale = Vector2(44.0631, 2.31316)
+texture = SubResource("CanvasTexture_ymm6h")
+
+[node name="Bottom" type="StaticBody2D" parent="."]
+position = Vector2(0, 17)
+scale = Vector2(0.5, 2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bottom"]
+position = Vector2(-1.34271, 0.5)
+shape = SubResource("RectangleShape2D_oc7t3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Bottom"]
+position = Vector2(-21.03, 0)
+scale = Vector2(42, 1)
+texture = SubResource("CanvasTexture_ymm6h")
+
+[node name="Bottom2" type="StaticBody2D" parent="."]
+position = Vector2(14, 8.5)
+scale = Vector2(0.25, 2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bottom2"]
+position = Vector2(0.828646, 0.5)
+shape = SubResource("RectangleShape2D_oc7t3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Bottom2"]
+position = Vector2(-21.03, 0)
+scale = Vector2(42, 1)
+texture = SubResource("CanvasTexture_ymm6h")
+
+[node name="Bottom3" type="StaticBody2D" parent="."]
+position = Vector2(-15, 8.5)
+scale = Vector2(0.25, 2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bottom3"]
+position = Vector2(0.828646, 0.5)
+shape = SubResource("RectangleShape2D_oc7t3")
+
+[node name="Sprite2D" type="Sprite2D" parent="Bottom3"]
+position = Vector2(-21.03, 0)
+scale = Vector2(42, 1)
+texture = SubResource("CanvasTexture_ymm6h")
