@@ -9,7 +9,7 @@
 size = Vector2(136, 138)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uvniq"]
-size = Vector2(60.1042, 58.3361)
+size = Vector2(44.1942, 43.3101)
 
 [node name="claw" type="Area2D"]
 position = Vector2(3, -75)
