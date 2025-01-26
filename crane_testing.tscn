@@ -1,12 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://gi4vhhaxxkpf"]
+[gd_scene load_steps=6 format=3 uid="uid://gi4vhhaxxkpf"]
 
+[ext_resource type="PackedScene" uid="uid://cqj8adsrgmjnj" path="res://temp moving/bubble_1_sprite.tscn" id="1_n0whh"]
 [ext_resource type="Texture2D" uid="uid://ewdlvwkjh8xm" path="res://Background_3.png" id="1_nr7d1"]
-[ext_resource type="PackedScene" uid="uid://bhhnf5vqlepiv" path="res://temp moving/booble.tscn" id="2_2h5st"]
 [ext_resource type="PackedScene" uid="uid://6stpvaosdagt" path="res://temp moving/claw.tscn" id="2_et1mu"]
-[ext_resource type="Texture2D" uid="uid://flvf7hl30cry" path="res://BowlPrototype4.png" id="2_odymy"]
-[ext_resource type="Texture2D" uid="uid://y3m54igoitdl" path="res://Bumps.png" id="3_0tnam"]
-[ext_resource type="PackedScene" path="res://button_move.tscn" id="4_eduw7"]
-[ext_resource type="PackedScene" path="res://button_move_right.tscn" id="5_7egkp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dvsgr"]
 size = Vector2(286, 30)
@@ -72,46 +68,6 @@ scale = Vector2(1.04762, 1)
 color = Color(0.61339, 0.61339, 0.61339, 1)
 polygon = PackedVector2Array(0, 79, 0, 57, -21, 57, -21, 79)
 
-[node name="Bowl" type="StaticBody2D" parent="."]
-position = Vector2(0, 10)
-
-[node name="Sprite2D" type="Sprite2D" parent="Bowl"]
-texture = ExtResource("2_odymy")
-
-[node name="Bowl5" type="StaticBody2D" parent="."]
-position = Vector2(0, 10)
-
-[node name="Sprite2D" type="Sprite2D" parent="Bowl5"]
-position = Vector2(54, 0)
-texture = ExtResource("2_odymy")
-
-[node name="Bowl4" type="StaticBody2D" parent="."]
-position = Vector2(0, 10)
-
-[node name="Sprite2D" type="Sprite2D" parent="Bowl4"]
-position = Vector2(-54, 0)
-texture = ExtResource("2_odymy")
-
-[node name="Bowl3" type="StaticBody2D" parent="."]
-position = Vector2(0, 10)
-
-[node name="Sprite2D" type="Sprite2D" parent="Bowl3"]
-position = Vector2(-27, 0)
-texture = ExtResource("3_0tnam")
-
-[node name="Bowl2" type="StaticBody2D" parent="."]
-position = Vector2(0, 10)
-
-[node name="Sprite2D" type="Sprite2D" parent="Bowl2"]
-position = Vector2(27, 0)
-texture = ExtResource("3_0tnam")
-
-[node name="ButtonMoveLeft" parent="." instance=ExtResource("4_eduw7")]
-position = Vector2(-11, 67)
-
-[node name="ButtonMoveRight" parent="." instance=ExtResource("5_7egkp")]
-position = Vector2(11, 67)
-
 [node name="Frame" type="StaticBody2D" parent="."]
 
 [node name="Polygon2D" type="Polygon2D" parent="Frame"]
@@ -165,11 +121,25 @@ scale = Vector2(2, 1.4)
 color = Color(0, 0, 0, 1)
 polygon = PackedVector2Array(138, 80, 141, 75, 141, 80)
 
-[node name="booble" parent="." instance=ExtResource("2_2h5st")]
+[node name="bubble_1_sprite" parent="." instance=ExtResource("1_n0whh")]
+position = Vector2(111, 5)
+
+[node name="CollisionShape2D" parent="bubble_1_sprite/bubble_1" index="0"]
+position = Vector2(8.49115, -1.44049)
+
+[node name="grabable_area" parent="bubble_1_sprite/bubble_1" index="1"]
+position = Vector2(56.5685, 57.723)
+
+[node name="CollisionShape2D" parent="bubble_1_sprite/bubble_1/grabable_area" index="0"]
+position = Vector2(-106.631, 101.298)
 
 [node name="claw" parent="." instance=ExtResource("2_et1mu")]
 position = Vector2(1.07288e-06, -47)
 
-[connection signal="area_entered" from="booble" to="claw/socket/socket_area" method="_on_booble_area_entered"]
+[node name="CollisionShape2D" parent="claw/socket/socket_area" index="0"]
+position = Vector2(-49.4975, -42.4264)
 
+[connection signal="area_entered" from="bubble_1_sprite/bubble_1/grabable_area" to="claw/socket/socket_area" method="_on_grabable_area_area_entered"]
+
+[editable path="bubble_1_sprite"]
 [editable path="claw"]
