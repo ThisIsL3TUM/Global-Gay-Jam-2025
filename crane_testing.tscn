@@ -1,19 +1,19 @@
-[gd_scene load_steps=10 format=3 uid="uid://fyviopfmkg8"]
+[gd_scene load_steps=10 format=3 uid="uid://gi4vhhaxxkpf"]
 
-[ext_resource type="PackedScene" uid="uid://dxcx7jkqge7m3" path="res://temp moving/bubble_1_sprite.tscn" id="1_n0whh"]
+[ext_resource type="PackedScene" uid="uid://cqj8adsrgmjnj" path="res://temp moving/bubble_1_sprite.tscn" id="1_n0whh"]
 [ext_resource type="Texture2D" uid="uid://ewdlvwkjh8xm" path="res://Background_3.png" id="1_nr7d1"]
 [ext_resource type="PackedScene" uid="uid://6stpvaosdagt" path="res://temp moving/claw.tscn" id="2_et1mu"]
 [ext_resource type="Texture2D" uid="uid://flvf7hl30cry" path="res://BowlPrototype4.png" id="2_odymy"]
 [ext_resource type="Texture2D" uid="uid://y3m54igoitdl" path="res://Bumps.png" id="3_0tnam"]
-[ext_resource type="PackedScene" uid="uid://bq1vekksxp1ut" path="res://button_move.tscn" id="4_eduw7"]
-[ext_resource type="PackedScene" uid="uid://duwnw7dgob6dn" path="res://button_move_right.tscn" id="5_7egkp"]
+[ext_resource type="PackedScene" path="res://button_move.tscn" id="4_eduw7"]
+[ext_resource type="PackedScene" uid="uid://da48y0bvvr6f3" path="res://button_move_right.tscn" id="5_7egkp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dvsgr"]
 size = Vector2(286, 30)
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_v7fxd"]
 
-[node name="Node2D2" type="Node2D"]
+[node name="Node2D3" type="Node2D"]
 
 [node name="Background3" type="Sprite2D" parent="."]
 position = Vector2(9.53674e-07, 61)
