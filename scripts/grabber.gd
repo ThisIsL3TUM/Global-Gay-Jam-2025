@@ -32,7 +32,18 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if SignalBus.main_start == true:
+		main_loop(delta)
+		
+	
+	
+
+func main_loop(delta:float) -> void:
+	
+	
+	
 	if Input.is_action_just_pressed("grab") && moves_to_make == 0:
+		
 		#print("yes")
 		#code for birnging claw down
 		#move the arm down

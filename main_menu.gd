@@ -13,4 +13,5 @@ func _process(delta: float) -> void:
 func _input(event):
 	if event is InputEventKey:
 		if Input.is_action_pressed("right") and Input.is_action_pressed("left"):
-			get_tree().change_scene_to_file("res://crane_testing.tscn")
+			SignalBus.start.emit()
+			get_tree().change_scene_to_file("res://crane_testing_but_yes.tscn")
