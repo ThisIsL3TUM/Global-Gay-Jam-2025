@@ -126,24 +126,25 @@ func attach_booble(coolio):
 func add_bubble_to_pocket_list(ID):
 	pass
 	
+	if object_on_claw !=null:
+		
+		if ID == 1:
+			if pocket_1_thing != "empty":
+				pocket_1_thing = "empty"
+			elif pocket_1_thing == "empty":
+				pocket_1_thing = object_on_claw.name
 	
-	if ID == 1:
-		if pocket_1_thing != "empty":
-			pocket_1_thing = "empty"
-		elif pocket_1_thing == "empty":
-			pocket_1_thing = object_on_claw.name
+		if ID == 2: 
+			if pocket_2_thing != "empty":
+				pocket_2_thing = "empty"
+			elif pocket_2_thing == "empty":
+				pocket_2_thing = object_on_claw.name
 	
-	if ID == 2: 
-		if pocket_2_thing != "empty":
-			pocket_2_thing = "empty"
-		elif pocket_2_thing == "empty":
-			pocket_2_thing = object_on_claw.name
-	
-	if ID == 3:
-		if pocket_3_thing != "empty":
-			pocket_3_thing = "empty"
-		elif pocket_3_thing == "empty":
-			pocket_3_thing = object_on_claw.name
+		if ID == 3:
+			if pocket_3_thing != "empty":
+				pocket_3_thing = "empty"
+			elif pocket_3_thing == "empty":
+				pocket_3_thing = object_on_claw.name
 
 	win_maybe()
 
