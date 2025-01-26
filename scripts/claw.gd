@@ -5,9 +5,9 @@ var minx = Vector2.ZERO
 var maxx = Vector2.ZERO
 
 func _ready() -> void:
-	minx.x = -100
+	minx.x = -135
 	minx.y = -999
-	maxx.x = 105
+	maxx.x = 140
 	maxx.y = 999
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
