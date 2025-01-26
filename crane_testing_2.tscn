@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://csyfsuqmtwasy"]
+[gd_scene load_steps=8 format=3 uid="uid://bho1lbi4btx3o"]
 
 [ext_resource type="Texture2D" uid="uid://ewdlvwkjh8xm" path="res://Background_3.png" id="1_kdi2v"]
-[ext_resource type="PackedScene" uid="uid://bhhnf5vqlepiv" path="res://temp moving/booble.tscn" id="2_xrleh"]
+[ext_resource type="PackedScene" path="res://temp moving/booble.tscn" id="2_xrleh"]
 [ext_resource type="PackedScene" uid="uid://6stpvaosdagt" path="res://temp moving/claw.tscn" id="3_f7nk7"]
+[ext_resource type="PackedScene" path="res://button_move.tscn" id="4_hurl7"]
+[ext_resource type="PackedScene" uid="uid://da48y0bvvr6f3" path="res://button_move_right.tscn" id="5_tr1oy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dvsgr"]
 size = Vector2(286, 30)
@@ -122,11 +124,20 @@ color = Color(0, 0, 0, 1)
 polygon = PackedVector2Array(138, 80, 141, 75, 141, 80)
 
 [node name="booble" parent="." instance=ExtResource("2_xrleh")]
+position = Vector2(111, 4.99999)
 
 [node name="claw" parent="." instance=ExtResource("3_f7nk7")]
 position = Vector2(1.07288e-06, -47)
 
 [node name="CollisionShape2D" parent="claw/socket/socket_area" index="0"]
 position = Vector2(-49.4975, -42.4264)
+
+[node name="ButtonMoveLeft" parent="." instance=ExtResource("4_hurl7")]
+position = Vector2(-11, 66)
+
+[node name="ButtonMoveRight" parent="." instance=ExtResource("5_tr1oy")]
+position = Vector2(11, 66)
+
+[connection signal="area_entered" from="booble" to="claw/socket/socket_area" method="_on_booble_area_entered"]
 
 [editable path="claw"]
