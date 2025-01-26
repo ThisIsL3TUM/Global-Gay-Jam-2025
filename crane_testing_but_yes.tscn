@@ -1,14 +1,18 @@
-[gd_scene load_steps=18 format=3 uid="uid://55pkarastanv"]
+[gd_scene load_steps=22 format=3 uid="uid://b88jquse81weg"]
 
 [ext_resource type="Texture2D" uid="uid://ewdlvwkjh8xm" path="res://Background_3.png" id="1_8twn5"]
+[ext_resource type="Texture2D" uid="uid://byb60d0b67dv0" path="res://Conveyor belt.png" id="2_0jact"]
+[ext_resource type="Texture2D" uid="uid://bf2ytgvqij3n8" path="res://IndicatorPuzzle.png" id="2_oqqx0"]
 [ext_resource type="PackedScene" path="res://temp moving/booble.tscn" id="2_tv8t3"]
 [ext_resource type="Script" path="res://scripts/booble.gd" id="3_7hwpx"]
 [ext_resource type="Texture2D" uid="uid://qp3hk0qmarps" path="res://Cloud bubbles.png" id="3_ba1ev"]
 [ext_resource type="PackedScene" uid="uid://6stpvaosdagt" path="res://temp moving/claw.tscn" id="3_kcetu"]
-[ext_resource type="PackedScene" path="res://button_move.tscn" id="4_ogoqk"]
-[ext_resource type="PackedScene" uid="uid://da48y0bvvr6f3" path="res://button_move_right.tscn" id="5_fsm3w"]
-[ext_resource type="Texture2D" uid="uid://flvf7hl30cry" path="res://BowlPrototype4.png" id="5_m5b8n"]
+[ext_resource type="PackedScene" uid="uid://bq1vekksxp1ut" path="res://button_move.tscn" id="4_ogoqk"]
+[ext_resource type="Texture2D" uid="uid://jd3sx6jqlroe" path="res://BowlPrototype4Pink.png" id="5_bbkne"]
+[ext_resource type="PackedScene" uid="uid://duwnw7dgob6dn" path="res://button_move_right.tscn" id="5_fsm3w"]
 [ext_resource type="Texture2D" uid="uid://y3m54igoitdl" path="res://Bumps.png" id="6_1hxgf"]
+[ext_resource type="Texture2D" uid="uid://cuyneceel5m45" path="res://BowlPrototype4Blue.png" id="7_xvx0n"]
+[ext_resource type="Texture2D" uid="uid://dnefy0b237jw8" path="res://BowlPrototype4Green.png" id="8_oej45"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dvsgr"]
 size = Vector2(286, 30)
@@ -51,9 +55,16 @@ position = Vector2(0, -76)
 shape = SubResource("RectangleShape2D_dvsgr")
 
 [node name="Sprite2D" type="Sprite2D" parent="Rail Prototype"]
-position = Vector2(-143, -87)
-scale = Vector2(286, 22)
-texture = SubResource("PlaceholderTexture2D_v7fxd")
+position = Vector2(-94, -57)
+texture = ExtResource("2_0jact")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Rail Prototype"]
+position = Vector2(0, -57)
+texture = ExtResource("2_0jact")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Rail Prototype"]
+position = Vector2(93, -57)
+texture = ExtResource("2_0jact")
 
 [node name="Comand Prototype" type="StaticBody2D" parent="."]
 
@@ -92,6 +103,12 @@ position = Vector2(22, 0)
 scale = Vector2(1.04762, 1)
 color = Color(0.61339, 0.61339, 0.61339, 1)
 polygon = PackedVector2Array(0, 79, 0, 57, -21, 57, -21, 79)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(-106, 57)
+texture = ExtResource("2_oqqx0")
 
 [node name="Frame" type="StaticBody2D" parent="."]
 
@@ -184,7 +201,7 @@ texture = SubResource("AtlasTexture_lhtdx")
 
 [node name="BowlPrototype4" type="Sprite2D" parent="."]
 position = Vector2(-44, 10)
-texture = ExtResource("5_m5b8n")
+texture = ExtResource("5_bbkne")
 
 [node name="Bumps" type="Sprite2D" parent="."]
 position = Vector2(-71, 10)
@@ -192,7 +209,7 @@ texture = ExtResource("6_1hxgf")
 
 [node name="BowlPrototype5" type="Sprite2D" parent="."]
 position = Vector2(-98, 10)
-texture = ExtResource("5_m5b8n")
+texture = ExtResource("7_xvx0n")
 
 [node name="Bumps2" type="Sprite2D" parent="."]
 position = Vector2(-17, 10)
@@ -200,7 +217,7 @@ texture = ExtResource("6_1hxgf")
 
 [node name="BowlPrototype6" type="Sprite2D" parent="."]
 position = Vector2(10, 10)
-texture = ExtResource("5_m5b8n")
+texture = ExtResource("8_oej45")
 
 [node name="claw" parent="." instance=ExtResource("3_kcetu")]
 position = Vector2(1.07288e-06, -47)
