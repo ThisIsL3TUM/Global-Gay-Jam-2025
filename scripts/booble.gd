@@ -20,6 +20,8 @@ func _on_socket_area_area_entered(area: Area2D) -> void:
 		SignalBus.cool.emit(1)
 	if area.name == "booble_2":
 		SignalBus.cool.emit(2)
+	if area.name == "booble_3":
+		SignalBus.cool.emit(3)
 	if area.name == "pocket_1":
 		SignalBus.pocket.emit(1)
 	pass

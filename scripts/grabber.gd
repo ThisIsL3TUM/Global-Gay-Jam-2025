@@ -3,6 +3,7 @@ extends Area2D
 var contacts = []
 var bubble_1
 var bubble_2
+var bubble_3
 var attached = false
 var object_on_claw
 var claw
@@ -22,6 +23,7 @@ var pocket_1_thing = "empty"
 func _ready() -> void:
 	bubble_1 = get_node("/root/Node2D2/booble")
 	bubble_2 = get_node("/root/Node2D2/booble_2")
+	bubble_3 = get_node("/root/Node2D2/booble_3")
 	claw = get_node("/root/Node2D2/claw")
 	SignalBus.cool.connect(attach_booble)
 	SignalBus.pocket.connect(add_bubble_to_pocket_list)
@@ -112,11 +114,14 @@ func turn_around():
 
 func attach_booble(coolio):
 	if coolio == 1:
-			object_on_claw = bubble_1
-			attached = true
+		object_on_claw = bubble_1
+		attached = true
 	if coolio == 2:
-			object_on_claw = bubble_2
-			attached = true
+		object_on_claw = bubble_2
+		attached = true
+	if coolio == 3:
+		object_on_claw = bubble_3
+		attached = true
 	#attached = true
 	if attach_timer == 0:
 		attach_timer = 5
