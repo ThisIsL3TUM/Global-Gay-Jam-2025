@@ -1,10 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://dl0il1hnpteyf"]
+[gd_scene load_steps=8 format=3 uid="uid://bho1lbi4btx3o"]
 
 [ext_resource type="Texture2D" uid="uid://ewdlvwkjh8xm" path="res://Background_3.png" id="1_kdi2v"]
 [ext_resource type="PackedScene" path="res://temp moving/booble.tscn" id="2_xrleh"]
 [ext_resource type="PackedScene" uid="uid://6stpvaosdagt" path="res://temp moving/claw.tscn" id="3_f7nk7"]
-[ext_resource type="PackedScene" uid="uid://bq1vekksxp1ut" path="res://button_move.tscn" id="4_hurl7"]
-[ext_resource type="PackedScene" uid="uid://duwnw7dgob6dn" path="res://button_move_right.tscn" id="5_tr1oy"]
+[ext_resource type="PackedScene" path="res://button_move.tscn" id="4_hurl7"]
+[ext_resource type="PackedScene" uid="uid://da48y0bvvr6f3" path="res://button_move_right.tscn" id="5_tr1oy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dvsgr"]
 size = Vector2(286, 30)

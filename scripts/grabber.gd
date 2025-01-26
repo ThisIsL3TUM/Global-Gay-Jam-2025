@@ -20,15 +20,22 @@ var booble_location = {}
 var pocket_1_thing = "empty"
 var pocket_2_thing = "empty"
 var pocket_3_thing = "empty"
+var light_1
+var light_2
+var light_3
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	bubble_1 = get_node("/root/Node2D2/booble")
 	bubble_2 = get_node("/root/Node2D2/booble_2")
 	bubble_3 = get_node("/root/Node2D2/booble_3")
+	light_1 = get_node("/root/Node2D2/Indicator/Light1")
+	light_2 = get_node("/root/Node2D2/Indicator/Light2")
+	light_3 = get_node("/root/Node2D2/Indicator/Light3")
 	claw = get_node("/root/Node2D2/claw")
 	SignalBus.cool.connect(attach_booble)
 	SignalBus.pocket.connect(add_bubble_to_pocket_list)
+
 
 
 
@@ -163,6 +170,20 @@ func win_maybe():
 			if pocket_3_thing == "booble":
 				print("three_gud")
 				print("win")
+				
+				
+	if pocket_1_thing == "booble_3":
+		light_1.visible = true
+	else:
+		light_1.visible = false
+	if pocket_2_thing == "booble_2":
+		light_2.visible = true
+	else:
+		light_2.visible = false
+	if pocket_3_thing == "booble":
+		light_3.visible = true
+	else:
+		light_3.visible = false
 
 func _on_area_entered(area):
 	pass

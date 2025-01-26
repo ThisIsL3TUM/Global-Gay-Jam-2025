@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://b88jquse81weg"]
+[gd_scene load_steps=31 format=3 uid="uid://55pkarastanv"]
 
 [ext_resource type="Texture2D" uid="uid://ewdlvwkjh8xm" path="res://Background_3.png" id="1_8twn5"]
 [ext_resource type="Texture2D" uid="uid://bf2ytgvqij3n8" path="res://IndicatorPuzzle.png" id="2_oqqx0"]
@@ -7,9 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://bt4dhvtxowl7b" path="res://Light.png" id="3_54r5y"]
 [ext_resource type="Texture2D" uid="uid://qp3hk0qmarps" path="res://Cloud bubbles.png" id="3_ba1ev"]
 [ext_resource type="PackedScene" uid="uid://6stpvaosdagt" path="res://temp moving/claw.tscn" id="3_kcetu"]
-[ext_resource type="PackedScene" uid="uid://bq1vekksxp1ut" path="res://button_move.tscn" id="4_ogoqk"]
+[ext_resource type="PackedScene" path="res://button_move.tscn" id="4_ogoqk"]
 [ext_resource type="Texture2D" uid="uid://jd3sx6jqlroe" path="res://BowlPrototype4Pink.png" id="5_bbkne"]
-[ext_resource type="PackedScene" uid="uid://duwnw7dgob6dn" path="res://button_move_right.tscn" id="5_fsm3w"]
+[ext_resource type="PackedScene" uid="uid://da48y0bvvr6f3" path="res://button_move_right.tscn" id="5_fsm3w"]
 [ext_resource type="Texture2D" uid="uid://y3m54igoitdl" path="res://Bumps.png" id="6_1hxgf"]
 [ext_resource type="Texture2D" uid="uid://cuyneceel5m45" path="res://BowlPrototype4Blue.png" id="7_xvx0n"]
 [ext_resource type="Texture2D" uid="uid://dnefy0b237jw8" path="res://BowlPrototype4Green.png" id="8_oej45"]
@@ -159,13 +159,16 @@ position = Vector2(-104, 54)
 texture = ExtResource("2_oqqx0")
 
 [node name="Light1" type="Sprite2D" parent="Indicator"]
+visible = false
 position = Vector2(-19, 0)
 texture = ExtResource("3_54r5y")
 
 [node name="Light2" type="Sprite2D" parent="Indicator"]
+visible = false
 texture = ExtResource("3_54r5y")
 
 [node name="Light3" type="Sprite2D" parent="Indicator"]
+visible = false
 position = Vector2(19, 0)
 texture = ExtResource("3_54r5y")
 
@@ -259,23 +262,23 @@ scale = Vector2(1.5, 1.5)
 texture = SubResource("AtlasTexture_lhtdx")
 
 [node name="BowlPrototype4" type="Sprite2D" parent="."]
-position = Vector2(-44, 10)
+position = Vector2(-44, 2)
 texture = ExtResource("5_bbkne")
 
 [node name="Bumps" type="Sprite2D" parent="."]
-position = Vector2(-71, 10)
+position = Vector2(-71, 2)
 texture = ExtResource("6_1hxgf")
 
 [node name="BowlPrototype5" type="Sprite2D" parent="."]
-position = Vector2(-98, 10)
+position = Vector2(-98, 2)
 texture = ExtResource("7_xvx0n")
 
 [node name="Bumps2" type="Sprite2D" parent="."]
-position = Vector2(-17, 10)
+position = Vector2(-17, 2)
 texture = ExtResource("6_1hxgf")
 
 [node name="BowlPrototype6" type="Sprite2D" parent="."]
-position = Vector2(10, 10)
+position = Vector2(10, 2)
 texture = ExtResource("8_oej45")
 
 [node name="claw" parent="." instance=ExtResource("3_kcetu")]
@@ -307,7 +310,7 @@ position = Vector2(11, 66)
 [node name="Node" type="Node" parent="."]
 
 [node name="pocket_1" type="Area2D" parent="Node"]
-position = Vector2(-98, 16)
+position = Vector2(-98, 14)
 scale = Vector2(1.54209, 3.2205)
 script = ExtResource("3_7hwpx")
 
@@ -315,7 +318,7 @@ script = ExtResource("3_7hwpx")
 shape = SubResource("RectangleShape2D_3xqk3")
 
 [node name="pocket_2" type="Area2D" parent="Node"]
-position = Vector2(-43, -24)
+position = Vector2(-43, -26)
 scale = Vector2(1.39532, 5.85724)
 script = ExtResource("3_7hwpx")
 
@@ -325,7 +328,7 @@ scale = Vector2(1, 0.693999)
 shape = SubResource("RectangleShape2D_3xqk3")
 
 [node name="pocket_3" type="Area2D" parent="Node"]
-position = Vector2(10, 7)
+position = Vector2(10, 5)
 scale = Vector2(1.70521, 3.92)
 script = ExtResource("3_7hwpx")
 
