@@ -24,4 +24,8 @@ func _on_socket_area_area_entered(area: Area2D) -> void:
 		SignalBus.cool.emit(3)
 	if area.name == "pocket_1":
 		SignalBus.pocket.emit(1)
+	if area.name == "pocket_2":
+		SignalBus.pocket.emit(2)
+	if area.name == "pocket_3":
+		SignalBus.pocket.emit(3)
 	pass

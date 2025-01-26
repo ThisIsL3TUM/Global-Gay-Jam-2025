@@ -18,6 +18,8 @@ var moves_to_detach
 var attach_timer = 0 
 var booble_location = {}
 var pocket_1_thing = "empty"
+var pocket_2_thing = "empty"
+var pocket_3_thing = "empty"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -34,13 +36,6 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if SignalBus.main_start == true:
-		main_loop(delta)
-		
-	
-	
-
-func main_loop(delta:float) -> void:
 	
 	
 	
@@ -130,16 +125,40 @@ func attach_booble(coolio):
 
 func add_bubble_to_pocket_list(ID):
 	pass
-	if pocket_1_thing != "empty":
-		pocket_1_thing = "empty"
-	elif pocket_1_thing == "empty":
-		pocket_1_thing = object_on_claw.name
-	else :
-		print("oooooooops")
-	print(pocket_1_thing)
 	
 	
+	if ID == 1:
+		if pocket_1_thing != "empty":
+			pocket_1_thing = "empty"
+		elif pocket_1_thing == "empty":
+			pocket_1_thing = object_on_claw.name
+	
+	if ID == 2: 
+		if pocket_2_thing != "empty":
+			pocket_2_thing = "empty"
+		elif pocket_2_thing == "empty":
+			pocket_2_thing = object_on_claw.name
+	
+	if ID == 3:
+		if pocket_3_thing != "empty":
+			pocket_3_thing = "empty"
+		elif pocket_3_thing == "empty":
+			pocket_3_thing = object_on_claw.name
 
+	win_maybe()
+
+func win_maybe():
+	print(pocket_1_thing)
+	print(pocket_2_thing)
+	print(pocket_3_thing)
+	pass
+	if pocket_1_thing == "booble_3":
+		#print("one_gud")
+		if pocket_2_thing == "booble_2":
+			#print("two_gud")
+			if pocket_3_thing == "booble":
+				#print("three_gud")
+				print("win")
 
 func _on_area_entered(area):
 	pass

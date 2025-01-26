@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://ewdlvwkjh8xm" path="res://Background_3.png" id="1_8twn5"]
 [ext_resource type="PackedScene" path="res://temp moving/booble.tscn" id="2_tv8t3"]
 [ext_resource type="Script" path="res://scripts/booble.gd" id="3_7hwpx"]
-[ext_resource type="Texture2D" uid="uid://bm1odhvyhp3gy" path="res://Lighting bubbles.png" id="3_h2qux"]
+[ext_resource type="Texture2D" uid="uid://qp3hk0qmarps" path="res://Cloud bubbles.png" id="3_ba1ev"]
 [ext_resource type="PackedScene" uid="uid://6stpvaosdagt" path="res://temp moving/claw.tscn" id="3_kcetu"]
 [ext_resource type="PackedScene" path="res://button_move.tscn" id="4_ogoqk"]
 [ext_resource type="PackedScene" uid="uid://da48y0bvvr6f3" path="res://button_move_right.tscn" id="5_fsm3w"]
@@ -15,23 +15,24 @@ size = Vector2(286, 30)
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_v7fxd"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_nkgsb"]
-atlas = ExtResource("3_h2qux")
-region = Rect2(32, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0gb4c"]
-atlas = ExtResource("3_h2qux")
-region = Rect2(16, 0, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_pissq"]
+atlas = ExtResource("3_ba1ev")
+region = Rect2(34, 0, 16, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gdbac"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ornvg"]
-atlas = ExtResource("3_h2qux")
-region = Rect2(0, 0, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_0gb4c"]
+atlas = ExtResource("3_ba1ev")
+region = Rect2(16, 0, 16, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_65yr7"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_lhtdx"]
+atlas = ExtResource("3_ba1ev")
+region = Rect2(0, 0, 16, 16)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3xqk3"]
+size = Vector2(20, 18.9851)
 
 [node name="Node2D2" type="Node2D"]
 
@@ -151,7 +152,7 @@ ID = 1
 
 [node name="Sprite2D" parent="booble" index="1"]
 rotation = -0.785398
-texture = SubResource("AtlasTexture_nkgsb")
+texture = SubResource("AtlasTexture_pissq")
 
 [node name="booble_2" type="Area2D" parent="."]
 position = Vector2(81, 3.00001)
@@ -160,26 +161,26 @@ scale = Vector2(0.15, 0.147)
 script = ExtResource("3_7hwpx")
 ID = 2
 
-[node name="Sprite2D" type="Sprite2D" parent="booble_2"]
-position = Vector2(4.71403, -4.81026)
-rotation = -0.785398
-scale = Vector2(10, 10)
-texture = SubResource("AtlasTexture_0gb4c")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="booble_2"]
 scale = Vector2(11.3709, 10.8129)
 shape = SubResource("RectangleShape2D_gdbac")
 
-[node name="booble_3" type="Area2D" parent="."]
-position = Vector2(46, 5)
+[node name="Sprite2D" type="Sprite2D" parent="booble_2"]
+position = Vector2(4.71402, -4.81027)
+rotation = -0.785398
+scale = Vector2(10, 10)
+texture = SubResource("AtlasTexture_0gb4c")
 
-[node name="Sprite2D" type="Sprite2D" parent="booble_3"]
-scale = Vector2(1.5, 1.5)
-texture = SubResource("AtlasTexture_ornvg")
+[node name="booble_3" type="Area2D" parent="."]
+position = Vector2(49, 8)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="booble_3"]
 scale = Vector2(1.5, 1.5)
 shape = SubResource("RectangleShape2D_65yr7")
+
+[node name="Sprite2D" type="Sprite2D" parent="booble_3"]
+scale = Vector2(1.5, 1.5)
+texture = SubResource("AtlasTexture_lhtdx")
 
 [node name="BowlPrototype4" type="Sprite2D" parent="."]
 position = Vector2(-44, 10)
@@ -217,23 +218,29 @@ position = Vector2(11, 66)
 
 [node name="pocket_1" type="Area2D" parent="Node"]
 position = Vector2(-98, 16)
-scale = Vector2(1.70521, 1)
+scale = Vector2(1.54209, 3.2205)
+script = ExtResource("3_7hwpx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node/pocket_1"]
 shape = SubResource("RectangleShape2D_3xqk3")
 
 [node name="pocket_2" type="Area2D" parent="Node"]
-position = Vector2(-44, 16)
-scale = Vector2(1.70521, 1)
+position = Vector2(-43, -24)
+scale = Vector2(1.39532, 5.85724)
+script = ExtResource("3_7hwpx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node/pocket_2"]
+position = Vector2(0, 7.89878)
+scale = Vector2(1, 0.693999)
 shape = SubResource("RectangleShape2D_3xqk3")
 
 [node name="pocket_3" type="Area2D" parent="Node"]
-position = Vector2(10, 15)
-scale = Vector2(1.70521, 1)
+position = Vector2(10, 7)
+scale = Vector2(1.70521, 3.92)
+script = ExtResource("3_7hwpx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node/pocket_3"]
+position = Vector2(0, 2.71739)
 shape = SubResource("RectangleShape2D_3xqk3")
 
 [connection signal="area_entered" from="claw/socket/socket_area" to="booble" method="_on_socket_area_area_entered"]
