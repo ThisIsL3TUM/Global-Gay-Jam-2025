@@ -1,11 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://cm1ca0sgox8t8"]
+[gd_scene load_steps=8 format=3 uid="uid://d10ui2csr8g20"]
 
 [ext_resource type="Script" path="res://main_menu.gd" id="1_calt1"]
 [ext_resource type="Texture2D" uid="uid://ckeoobxiekjkr" path="res://Background.png" id="2_m3s4m"]
 [ext_resource type="Texture2D" uid="uid://d1gtw2o1csu60" path="res://TextP1NewFinal.png" id="3_x53rd"]
-[ext_resource type="PackedScene" path="res://button_move.tscn" id="4_8hu83"]
+[ext_resource type="PackedScene" uid="uid://bq1vekksxp1ut" path="res://button_move.tscn" id="4_8hu83"]
 [ext_resource type="Texture2D" uid="uid://byqqhmgqpm4sk" path="res://TextP2.png" id="4_ajgix"]
-[ext_resource type="PackedScene" uid="uid://da48y0bvvr6f3" path="res://button_move_right.tscn" id="6_wjovi"]
+[ext_resource type="PackedScene" uid="uid://duwnw7dgob6dn" path="res://button_move_right.tscn" id="6_wjovi"]
+[ext_resource type="Texture2D" uid="uid://kafdfwm3o3pb" path="res://Logo.png" id="7_rb5i8"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -36,3 +37,7 @@ position = Vector2(58, 64)
 
 [node name="ButtonMoveRight" parent="." instance=ExtResource("6_wjovi")]
 position = Vector2(73, 64)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(67, 29)
+texture = ExtResource("7_rb5i8")
