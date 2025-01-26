@@ -6,6 +6,7 @@ signal exited_bowl
 signal cool(bubble_ID)
 signal pocket(pocket_ID)
 signal start
+signal claw_open(state)
 var main_start = false
 
 func _ready() -> void:

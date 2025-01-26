@@ -36,11 +36,10 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if Input.is_action_pressed("reset"):
+		get_tree().change_scene_to_file("res://Main Menu.tscn")
 	
-	
-	
-	if Input.is_action_just_pressed("grab") && moves_to_make == 0:
-		
+
 		#print("yes")
 		#code for birnging claw down
 		#move the arm down
@@ -78,6 +77,10 @@ func _process(delta: float) -> void:
 		if attach_timer > 1:
 			attach_timer -=1
 		
+		if attached == true:
+			SignalBus.claw_open.emit(false)
+		if attached == false:
+			SignalBus.claw_open.emit(true)
 		
 		if moves_to_detach == 0 && attach_timer == 1:
 			attach_timer = 0
@@ -126,24 +129,26 @@ func attach_booble(coolio):
 func add_bubble_to_pocket_list(ID):
 	pass
 	
+	if object_on_claw != null:
+		
+		
+		if ID == 1:
+			if pocket_1_thing != "empty":
+				pocket_1_thing = "empty"
+			elif pocket_1_thing == "empty":
+				pocket_1_thing = object_on_claw.name
 	
-	if ID == 1:
-		if pocket_1_thing != "empty":
-			pocket_1_thing = "empty"
-		elif pocket_1_thing == "empty":
-			pocket_1_thing = object_on_claw.name
+		if ID == 2: 
+			if pocket_2_thing != "empty":
+				pocket_2_thing = "empty"
+			elif pocket_2_thing == "empty":
+				pocket_2_thing = object_on_claw.name
 	
-	if ID == 2: 
-		if pocket_2_thing != "empty":
-			pocket_2_thing = "empty"
-		elif pocket_2_thing == "empty":
-			pocket_2_thing = object_on_claw.name
-	
-	if ID == 3:
-		if pocket_3_thing != "empty":
-			pocket_3_thing = "empty"
-		elif pocket_3_thing == "empty":
-			pocket_3_thing = object_on_claw.name
+		if ID == 3:
+			if pocket_3_thing != "empty":
+				pocket_3_thing = "empty"
+			elif pocket_3_thing == "empty":
+				pocket_3_thing = object_on_claw.name
 
 	win_maybe()
 
@@ -153,11 +158,11 @@ func win_maybe():
 	print(pocket_3_thing)
 	pass
 	if pocket_1_thing == "booble_3":
-		#print("one_gud")
+		print("one_gud")
 		if pocket_2_thing == "booble_2":
-			#print("two_gud")
+			print("two_gud")
 			if pocket_3_thing == "booble":
-				#print("three_gud")
+				print("three_gud")
 				print("win")
 
 func _on_area_entered(area):
