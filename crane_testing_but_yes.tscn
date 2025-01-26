@@ -1,15 +1,21 @@
-[gd_scene load_steps=8 format=3 uid="uid://55pkarastanv"]
+[gd_scene load_steps=12 format=3 uid="uid://55pkarastanv"]
 
 [ext_resource type="Texture2D" uid="uid://ewdlvwkjh8xm" path="res://Background_3.png" id="1_8twn5"]
 [ext_resource type="PackedScene" path="res://temp moving/booble.tscn" id="2_tv8t3"]
+[ext_resource type="Script" path="res://scripts/booble.gd" id="3_7hwpx"]
 [ext_resource type="PackedScene" uid="uid://6stpvaosdagt" path="res://temp moving/claw.tscn" id="3_kcetu"]
 [ext_resource type="PackedScene" path="res://button_move.tscn" id="4_ogoqk"]
 [ext_resource type="PackedScene" uid="uid://da48y0bvvr6f3" path="res://button_move_right.tscn" id="5_fsm3w"]
+[ext_resource type="Texture2D" uid="uid://b0grr0qoxyk4b" path="res://Boobel.png" id="6_4owga"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dvsgr"]
 size = Vector2(286, 30)
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_v7fxd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gdbac"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3xqk3"]
 
 [node name="Node2D2" type="Node2D"]
 
@@ -125,6 +131,22 @@ polygon = PackedVector2Array(138, 80, 141, 75, 141, 80)
 
 [node name="booble" parent="." instance=ExtResource("2_tv8t3")]
 position = Vector2(111, 4.99999)
+ID = 1
+
+[node name="booble_2" type="Area2D" parent="."]
+position = Vector2(57, 2)
+rotation = 0.785398
+scale = Vector2(0.15, 0.147)
+script = ExtResource("3_7hwpx")
+ID = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="booble_2"]
+scale = Vector2(11.7499, 10.0522)
+texture = ExtResource("6_4owga")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="booble_2"]
+scale = Vector2(11.3709, 10.8129)
+shape = SubResource("RectangleShape2D_gdbac")
 
 [node name="claw" parent="." instance=ExtResource("3_kcetu")]
 position = Vector2(1.07288e-06, -47)
@@ -138,6 +160,15 @@ position = Vector2(-11, 66)
 [node name="ButtonMoveRight" parent="." instance=ExtResource("5_fsm3w")]
 position = Vector2(11, 66)
 
-[connection signal="area_entered" from="booble" to="claw/socket/socket_area" method="_on_booble_area_entered"]
+[node name="Node" type="Node" parent="."]
 
+[node name="pocket_1" type="Area2D" parent="Node"]
+position = Vector2(-79, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node/pocket_1"]
+shape = SubResource("RectangleShape2D_3xqk3")
+
+[connection signal="area_entered" from="claw/socket/socket_area" to="booble" method="_on_socket_area_area_entered"]
+
+[editable path="booble"]
 [editable path="claw"]

@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=3 uid="uid://cm1ca0sgox8t8"]
+
+[ext_resource type="Script" path="res://main_menu.gd" id="1_calt1"]
+[ext_resource type="Texture2D" uid="uid://ckeoobxiekjkr" path="res://Background.png" id="2_m3s4m"]
+[ext_resource type="Texture2D" uid="uid://d1gtw2o1csu60" path="res://TextP1NewFinal.png" id="3_x53rd"]
+[ext_resource type="PackedScene" path="res://button_move.tscn" id="4_8hu83"]
+[ext_resource type="Texture2D" uid="uid://byqqhmgqpm4sk" path="res://TextP2.png" id="4_ajgix"]
+[ext_resource type="PackedScene" uid="uid://da48y0bvvr6f3" path="res://button_move_right.tscn" id="6_wjovi"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchor_right = 1.268
+anchor_bottom = 1.05
+offset_right = -67.608
+offset_bottom = -14.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_calt1")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(128, 120)
+texture = ExtResource("2_m3s4m")
+
+[node name="Text P1" type="Sprite2D" parent="."]
+position = Vector2(33, 66)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_x53rd")
+
+[node name="Text P2" type="Sprite2D" parent="."]
+position = Vector2(98, 66)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_ajgix")
+
+[node name="ButtonMoveLeft" parent="." instance=ExtResource("4_8hu83")]
+position = Vector2(58, 64)
+
+[node name="ButtonMoveRight" parent="." instance=ExtResource("6_wjovi")]
+position = Vector2(73, 64)
